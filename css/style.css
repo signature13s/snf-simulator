@@ -74,14 +74,17 @@ body {
 #pouringMilkSolution,
 #butryometer-filling,
 #waterButryometer,
-#waterMeasuringCylinder,#pipetteWater-w,
+#waterMeasuringCylinder,
+#pipetteWater-w,
 #lactometer-w,
 #thermometer-w1,
-#thermometer-w,#milk50-solution-w,#milk50-solution-w1{
+#thermometer-w,
+#milk50-solution-w,
+#milk50-solution-w1 {
   position: absolute;
   transition: transform 1s ease-in-out;
 }
-#lactometer-w{
+#lactometer-w {
   width: 1vw;
   left: 41vw;
   bottom: 8vh;
@@ -89,27 +92,23 @@ body {
   display: none;
   transform: rotate(90deg);
 }
-#thermometer-w{
+#thermometer-w {
   width: 2vw;
   left: 41vw;
   bottom: 5vh;
   z-index: 2;
   display: none;
-  
+
   transform: rotate(90deg);
 }
 
-#thermometer-w1{
-  
+#thermometer-w1 {
   width: 0.15vw;
-  height:10px;
+  height: 10px;
   left: 50.55vw;
   bottom: 22vh;
   z-index: 3;
   display: none;
-  
-
-
 }
 /* Individual Image Styling (use percentages or vw for scaling) */
 #measuring-cylinder-w {
@@ -151,17 +150,17 @@ body {
   display: none;
   /* display: none; */
 }
-#amyl-alcohol-w{
+#amyl-alcohol-w {
   width: 6vw;
   left: 34vw;
   bottom: 18vh;
   z-index: 12;
 }
-#amyl-alcohol-solution{
+#amyl-alcohol-solution {
   width: 6vw;
   left: 34vw;
   bottom: 18vh;
-  z-index: 9
+  z-index: 9;
 }
 #sulphuric-acid-w {
   width: 6vw;
@@ -176,7 +175,6 @@ body {
   z-index: 9;
 }
 
-
 #pipette-w {
   width: 3vw;
   left: 7vw;
@@ -186,7 +184,6 @@ body {
 }
 
 #butryometer-w {
-
   width: 1.5vw;
   left: 31.35vw;
   bottom: 0%;
@@ -194,7 +191,6 @@ body {
   transform: rotate(90deg);
 }
 #butryometer1-w {
-
   width: 1.5vw;
   left: 32.35vw;
   display: none;
@@ -203,58 +199,44 @@ body {
   transform: rotate(90deg);
 }
 
-#pouringSolution{
-
-  width:0.4%;
+#pouringSolution {
+  width: 0.4%;
   display: none;
   transition: transform 2s ease-in-out;
   left: 32vw;
   bottom: 24.5%;
   z-index: 0;
-  
 }
-#pouringSolution1{
-
-  width:0.4%;
+#pouringSolution1 {
+  width: 0.4%;
   /* display: none; */
   transition: transform 2s ease-in-out;
   left: 32vw;
   bottom: 21%;
   display: none;
   z-index: 0;
-  
 }
-#pouringMilkSolution{
-
-  width:0.4%;
+#pouringMilkSolution {
+  width: 0.4%;
   display: none;
   transition: transform 2s ease-in-out;
   left: 32vw;
   bottom: 24.5%;
   z-index: 0;
-  
 }
-#butryometer-filling{
-
- 
+#butryometer-filling {
   width: 1.2vw;
   left: 31.5vw;
   bottom: 23.5%;
   z-index: 1;
   display: none;
-  
-  
 }
-#waterButryometer{
-
- 
+#waterButryometer {
   width: 1.2vw;
   left: 31.5vw;
   bottom: 19.1%;
   z-index: 1;
   display: none;
-  
-  
 }
 #centrifuge {
   position: relative;
@@ -264,7 +246,9 @@ body {
 }
 
 /* Common styles */
-#centrifuge-w, #centrifuge1-w, #centrifuge-g-w {
+#centrifuge-w,
+#centrifuge1-w,
+#centrifuge-g-w {
   position: absolute;
   width: 22vw;
   left: 2vw;
@@ -287,7 +271,7 @@ body {
   bottom: 41vh;
   z-index: 21;
   left: 1.8vw;
- 
+
   will-change: transform;
   /* display:none; */
 }
@@ -295,31 +279,28 @@ body {
 #pipetteMilk {
   /* display: none; */
   width: 0.7vw;
-  left:50.2vw;
+  left: 50.2vw;
   bottom: 31.3vh;
   z-index: 0;
   transition: transform 1s ease-in-out;
 }
-#pipetteWater-w{
- 
+#pipetteWater-w {
   /* display: none; */
   width: 0.7vw;
-  left:50.21vw;
+  left: 50.21vw;
   bottom: 31.3vh;
   z-index: 0;
   display: none;
   transition: transform 1s ease-in-out;
-
 }
-#pipetteAmyl{
+#pipetteAmyl {
   /* display: none; */
   width: 2vw;
-  left:36vw;
+  left: 36vw;
   bottom: 26vh;
-  z-index:100;
+  z-index: 100;
   display: none;
   transition: transform 1s ease-in-out;
-
 }
 #pipetteAcid {
   width: 0.7vw;
@@ -330,7 +311,6 @@ body {
   height: 4vh;
   transition: transform 1s ease-in-out;
   transform-origin: top;
-  
 }
 /* ──────────────────────────────────────────────
    1. WATER‑BATH WRAPPER  (bottom now 5 vh)
@@ -343,7 +323,6 @@ body {
   bottom: 3.5vh;
   width: 18.5vw;
   aspect-ratio: 1 / 1;
-  
 }
 
 /* Inner bath is relatively positioned so all children follow */
@@ -363,10 +342,13 @@ body {
   width: 100%;
   height: auto;
 }
-#water-bath-w  { z-index: 1; }
-#water-bath-w1 { z-index: 5;
-top: 1.8vh !important;
-left: 0.37vw !important; 
+#water-bath-w {
+  z-index: 1;
+}
+#water-bath-w1 {
+  z-index: 5;
+  top: 1.8vh !important;
+  left: 0.37vw !important;
 }
 
 /* Controls overlay the image */
@@ -388,7 +370,8 @@ left: 0.37vw !important;
   pointer-events: auto;
 }
 
-#temperature, #time {
+#temperature,
+#time {
   display: flex;
   align-items: baseline;
   gap: 0.2vw;
@@ -399,8 +382,15 @@ left: 0.37vw !important;
   font-weight: bold;
 }
 
-#temp, #celcius { color: red; }
-#min, #dots, #sec { color: rgb(100, 175, 19); }
+#temp,
+#celcius {
+  color: red;
+}
+#min,
+#dots,
+#sec {
+  color: rgb(100, 175, 19);
+}
 
 /* Buttons container */
 #buttonWrapper {
@@ -427,15 +417,40 @@ left: 0.37vw !important;
 }
 
 /* Custom positions — you can adjust as needed */
-#onoff    { top: 12%; left: 62%; }
+#onoff {
+  top: 12%;
+  left: 62%;
+}
 
-#setTemp  { top: 23%; left: 45%; }
-#start    { top: 23%; left: 75%; }
-#begin    { top: 23%; left: 75%; display: none; }
-#mm       { top: 40%; left: 8%; }
-#ss       { top: 40%; left: 30%; }
-#increase { top: 35%; left: 50%; }
-#decrease { top: 35%; left: 80%; }
+#setTemp {
+  top: 23%;
+  left: 45%;
+}
+#start {
+  top: 23%;
+  left: 75%;
+}
+#begin {
+  top: 23%;
+  left: 75%;
+  display: none;
+}
+#mm {
+  top: 40%;
+  left: 8%;
+}
+#ss {
+  top: 40%;
+  left: 30%;
+}
+#increase {
+  top: 35%;
+  left: 50%;
+}
+#decrease {
+  top: 35%;
+  left: 80%;
+}
 
 /* Responsive tweaks for mobile */
 @media (max-width: 768px) {
@@ -454,14 +469,38 @@ left: 0.37vw !important;
   }
 
   /* Optional: adjust positions on mobile */
-  #onoff    { top: 55%; left: 15%; }
-  #setTemp  { top: 63%; left: 10%; }
-  #start    { top: 73%; left: 30%; }
-  #begin    { top: 73%; left: 3%; }
-  #mm       { top: 83%; left: 12%; }
-  #ss       { top: 83%; left: 35%; }
-  #increase { top: 60%; left: 45%; }
-  #decrease { top: 67%; left: 45%; }
+  #onoff {
+    top: 55%;
+    left: 15%;
+  }
+  #setTemp {
+    top: 63%;
+    left: 10%;
+  }
+  #start {
+    top: 73%;
+    left: 30%;
+  }
+  #begin {
+    top: 73%;
+    left: 3%;
+  }
+  #mm {
+    top: 83%;
+    left: 12%;
+  }
+  #ss {
+    top: 83%;
+    left: 35%;
+  }
+  #increase {
+    top: 60%;
+    left: 45%;
+  }
+  #decrease {
+    top: 67%;
+    left: 45%;
+  }
 }
 
 /* Instruction text */
@@ -472,54 +511,59 @@ left: 0.37vw !important;
   font-size: 0.95vw;
   color: #333;
 }
-.power-off{
+.power-off {
   display: none;
 }
-#CentrifugeControls{
+#CentrifugeControls {
   position: absolute;
   /* display: none; */
 }
-#increaseRpm{
-
+#Rpm {
+  position: absolute;
+  background-color: orange;
+  bottom: 24vh;
+  left: 18vw;
+  z-index: 999;
+  transform: rotate(-8deg);
+  transform-origin: center bottom;
+}
+#increaseRpm {
+  position: absolute;
+  background-color: orange;
+  bottom: 36vh;
+  left: 18vw;
+  z-index: 999;
+  transform: rotate(-8deg);
+  transform-origin: center bottom;
+}
+#decreaseRpm {
   position: absolute;
   background-color: orange;
   bottom: 32vh;
   left: 18vw;
   z-index: 999;
-  transform: rotate(-8deg);transform-origin: center bottom;
-
-}
-#decreaseRpm{
-
-  position: absolute;
-  background-color: orange;
-  bottom: 28vh;
-  left: 18vw;
-  z-index: 999;
   transform: rotate(-8deg);
-transform-origin: center bottom;
+  transform-origin: center bottom;
 }
-#power{
-
+#power {
   position: absolute;
   background-color: orange;
   bottom: 38vh;
   left: 18vw;
   z-index: 999;
-  transform: rotate(-8deg);transform-origin: center bottom;
-
+  transform: rotate(-8deg);
+  transform-origin: center bottom;
 }
-#startCentrifuge{
+#startCentrifuge {
   position: absolute;
   background-color: orange;
   bottom: 38vh;
   left: 30vw;
   z-index: 999;
-  transform: rotate(-8deg);transform-origin: center bottom;
-
+  transform: rotate(-8deg);
+  transform-origin: center bottom;
 }
-#rpm{
-
+#rpm {
   position: absolute;
   transform-origin: center bottom;
   /* background-color: blue; */
@@ -530,7 +574,6 @@ transform-origin: center bottom;
   transform: rotate(-9deg);
   /* display: none; */
   font-weight: bold;
-
 }
 #centrifugeMin {
   left: 14.5vw;
@@ -551,31 +594,28 @@ transform-origin: center bottom;
   font-weight: bold;
   z-index: 9999;
 }
-#centrifugeMM{
-    position: absolute;
+#centrifugeMM {
+  position: absolute;
   background-color: orange;
   bottom: 25vh;
   left: 14vw;
   z-index: 999;
   transform: rotate(-8deg);
   transform-origin: center bottom;
-
-
 }
-#centrifugeSS{
-    position: absolute;
+#centrifugeSS {
+  position: absolute;
   background-color: orange;
   bottom: 20vh;
   left: 14vw;
   transform: rotate(-8deg);
   z-index: 999;
   transform-origin: center bottom;
-
 }
 
-#testTube{
- position: absolute;
- background-color: red;
+#testTube {
+  position: absolute;
+  background-color: red;
   left: 25vw;
   bottom: 15vh;
   width: 15vw;
@@ -594,29 +634,42 @@ transform-origin: center bottom;
   width: 100%;
   height: auto;
 }
-#testTubeBack{
+#testTubeBack {
   position: absolute;
   z-index: 55;
-  
+
   /*
    width: 5vw; */
-
 }
 
-#testTubeFront{
+#testTubeFront {
   position: absolute;
   z-index: 10;
   /* position: relative; */
   bottom: 15vh;
   /* width: 2vw; */
-
 }
 /* Shaking Animation */
 @keyframes shake {
-  0%, 100% { transform: translate(0, 0) rotate(0); }
-  10%, 30%, 50%, 70% { transform: translate(-5px, 0) rotate(-60deg); }
-  20%, 40%, 60%, 80% { transform: translate(5px, 0) rotate(60deg); }
-  90% { transform: translate(-2px, 0) rotate(0); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translate(-5px, 0) rotate(-60deg);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(5px, 0) rotate(60deg);
+  }
+  90% {
+    transform: translate(-2px, 0) rotate(0);
+  }
 }
 .shake {
   animation: shake 1s infinite;
@@ -630,7 +683,8 @@ transform-origin: center bottom;
     height: auto;
   }
 
-  #left, #right {
+  #left,
+  #right {
     width: 100%;
   }
 
@@ -643,7 +697,11 @@ transform-origin: center bottom;
     padding: 1vw;
   }
 
-  #temp, #celcius, #min, #dots, #sec {
+  #temp,
+  #celcius,
+  #min,
+  #dots,
+  #sec {
     font-size: 3vw;
   }
 
@@ -664,18 +722,16 @@ transform-origin: center bottom;
 .pouring {
   animation: pouring 2s linear forwards;
 }
-.filling{
+.filling {
   animation: filling 2s linear forwards;
-
 }
-.filling1{
+.filling1 {
   animation: filling1 2s linear forwards;
-
 }
-.pouring1{
+.pouring1 {
   animation: pouring1 2s linear forwards;
 }
-.filling2{
+.filling2 {
   animation: filling2 2s linear forwards;
 }
 .thermometerFilling {
@@ -689,104 +745,93 @@ transform-origin: center bottom;
     clip-path: inset(100% 0% 0% 0%);
   }
 }
-@keyframes filling{
-   0% {
+@keyframes filling {
+  0% {
     clip-path: inset(100% 0% 0% 0%);
-   }
-   100%{
+  }
+  100% {
     clip-path: inset(73% 0% 0% 0%);
-
-   }
-
+  }
 }
-.reducing{
+.reducing {
   animation: reducing 2s linear forwards;
 }
-@keyframes reducing{
+@keyframes reducing {
   0% {
     clip-path: inset(0% 0% 0% 0%);
-   }
-   100%{
+  }
+  100% {
     clip-path: inset(18% 0% 0% 0%);
-
-   }
+  }
 }
 @keyframes pouring1 {
   0% {
     clip-path: inset(0% 0% 0% 0%);
   }
-  70%{
-    clip-path: inset(0% 0% 0% 0%);;
+  70% {
+    clip-path: inset(0% 0% 0% 0%);
   }
   100% {
     clip-path: inset(100% 0% 0% 0%);
   }
-}@keyframes filling{
-   0% {
+}
+@keyframes filling {
+  0% {
     clip-path: inset(100% 0% 0% 0%);
-   }
-   100%{
-    clip-path: inset(73% 0% 0% 0%);
-
-   }
   }
-  @keyframes filling1{
-   0% {
+  100% {
     clip-path: inset(73% 0% 0% 0%);
-   }
-   100%{
-    clip-path: inset(7% 0% 0% 0%);
-
-   }
   }
-   @keyframes filling2{
-   0% {
+}
+@keyframes filling1 {
+  0% {
+    clip-path: inset(73% 0% 0% 0%);
+  }
+  100% {
     clip-path: inset(7% 0% 0% 0%);
-   }
-   100%{
+  }
+}
+@keyframes filling2 {
+  0% {
+    clip-path: inset(7% 0% 0% 0%);
+  }
+  100% {
     clip-path: inset(0% 0% 0% 0%);
-
-   }
   }
+}
 
-
-  .reducing1{
-    animation: reducing1 2s linear forwards;
-  }
-  @keyframes reducing1{
+.reducing1 {
+  animation: reducing1 2s linear forwards;
+}
+@keyframes reducing1 {
   0% {
     clip-path: inset(0% 0% 0% 0%);
-   }
-   100%{
+  }
+  100% {
     clip-path: inset(28% 0% 0% 0%);
-
-   }
+  }
 }
 
-@keyframes thermometreFilling{
+@keyframes thermometreFilling {
   0% {
     clip-path: inset(100% 0% 0% 0%);
-   }
-   100%{
+  }
+  100% {
     clip-path: inset(30% 0% 0% 0%);
-
-   }
-
-
+  }
 }
 
-.instructionBox{
+.instructionBox {
   height: 30%;
   background-color: rgb(3, 66, 122);
-
 }
 
-#nextRender{
+#nextRender {
   display: none;
 }
-#nextRender1{
+#nextRender1 {
   display: none;
 }
-#nextRender2{
+#nextRender2 {
   display: none;
 }

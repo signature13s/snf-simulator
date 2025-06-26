@@ -26,11 +26,10 @@ const thermometer = $id("thermometer-w");
 const thermometerReading = $id("thermometer-w1");
 
 const milk50Solution = $id("milk50-solution-w");
-const milkMoreThan50Solution = $id("milk50-solution-w1")
+const milkMoreThan50Solution = $id("milk50-solution-w1");
 
 const startBathButton = $id("start");
-const startSecondStartButton = $id("begin")
-
+const startSecondStartButton = $id("begin");
 
 // Water‑bath panel
 const tempDisplay = $id("temp");
@@ -64,8 +63,8 @@ const centrifugeSecEl = $id("centrifugeSec");
 const centrifuge = $id("centrifuge");
 
 const nextButton = $id("nextRender");
-const nextButton1 = $id("nextRender1")
-const nextButton2 = $id("nextRender2")
+const nextButton1 = $id("nextRender1");
+const nextButton2 = $id("nextRender2");
 
 /* -------------------- 3. Global state ------------------------------ */
 // Water‑bath
@@ -178,29 +177,29 @@ let isPipetteBusy = false;
 // butryometerFilling.style.transform = "translate(0vw,-20vh)"; // Lock to avoid multiple triggers
 
 thermometer.addEventListener("click", async () => {
-  if(pipetteStep ===27){
-  thermometer.style.transform = "translate(0vw,-50vh)";
+  if (pipetteStep === 27) {
+    thermometer.style.transform = "translate(0vw,-50vh)";
 
-  await wait(1000);
+    await wait(1000);
 
-  thermometer.style.transform = "translate(8.6vw,-50vh)";
-  await wait(1000);
+    thermometer.style.transform = "translate(8.6vw,-50vh)";
+    await wait(1000);
 
-  thermometer.style.transform = "translate(8.6vw,-22vh)";
-  await wait(1000)
-  thermometerReading.style.display="block";
-  thermometerReading.classList.add("thermometerFilling");
-  pipetteStep = 28;
+    thermometer.style.transform = "translate(8.6vw,-22vh)";
+    await wait(1000);
+    thermometerReading.style.display = "block";
+    thermometerReading.classList.add("thermometerFilling");
+    pipetteStep = 28;
   }
 });
 lactometer.addEventListener("click", async () => {
-  if(pipetteStep ===26){
-  lactometer.style.transform = "translate(0vw,-50vh) rotate(0deg)";
-  await wait(1000);
-  lactometer.style.transform = "translate(9vw,-50vh)";
-  await wait(1000);
-  lactometer.style.transform = "translate(9vw,-12vh)";
-  pipetteStep = 27;
+  if (pipetteStep === 26) {
+    lactometer.style.transform = "translate(0vw,-50vh) rotate(0deg)";
+    await wait(1000);
+    lactometer.style.transform = "translate(9vw,-50vh)";
+    await wait(1000);
+    lactometer.style.transform = "translate(9vw,-12vh)";
+    pipetteStep = 27;
   }
 });
 
@@ -211,7 +210,6 @@ pipette.addEventListener("click", async () => {
 
   try {
     if (pipetteStep === 1) {
-     
       await wait(500);
       pipette.style.transform = "translate(0vw,-50vh) rotate(0deg)";
       await wait(1000);
@@ -219,10 +217,9 @@ pipette.addEventListener("click", async () => {
       await wait(1000);
       pipette.style.transform = "translate(35.4vw,-20vh)";
       await wait(1000);
-       updateInstruction(pipetteStep)
+      updateInstruction(pipetteStep);
       sulphuricAcidSolution.classList.add("reducing");
       pipetteStep = 2;
-      
     } else if (pipetteStep === 3) {
       await wait(1000);
       pipette.style.transform = "translate(23.6vw,-50vh)";
@@ -249,7 +246,7 @@ pipette.addEventListener("click", async () => {
       pouringMilkSolution.classList.add("pouring1");
       await wait(800);
       butryometerFilling.classList.add("filling1");
-      updateInstruction(pipetteStep)
+      updateInstruction(pipetteStep);
       pipetteStep = 4;
     } else if (pipetteStep === 4) {
       await wait(1000);
@@ -264,7 +261,7 @@ pipette.addEventListener("click", async () => {
       pipette.style.transform = "translate(23.6vw,-45vh)";
       await wait(1000);
       pipette.style.transform = "translate(0vw,0vh) rotate(90deg)";
-      updateInstruction(pipetteStep)
+      updateInstruction(pipetteStep);
       pipetteStep = 5;
       console.log("step 3 completed", pipetteStep);
     } else if (pipetteStep === 13) {
@@ -277,7 +274,7 @@ pipette.addEventListener("click", async () => {
       await wait(1000);
       waterMeasuringCylinder.classList.add("reducing1");
       await wait(1000);
-      pipetteWater.style.display='block'
+      pipetteWater.style.display = "block";
       pipetteWater.style.transform = "translate(0vw,-15vh)";
 
       pipette.style.transform = "translate(42vw,-50vh)";
@@ -300,7 +297,7 @@ pipette.addEventListener("click", async () => {
 
       await wait(1500);
       pipette.style.transform = "translate(0vw,0vh) rotate(90deg)";
-      updateInstruction(pipetteStep)
+      updateInstruction(pipetteStep);
 
       pipetteStep = 14;
     }
@@ -314,9 +311,9 @@ butryometer.addEventListener("click", async () => {
   // if(isButryometerBusy) return;
   // isButryometerBusy = true;
   if (pipetteStep === 2) {
-    pipetteAcid.style.display="block"
+    pipetteAcid.style.display = "block";
     await wait(500);
-    
+
     butryometer.style.transform = "translate(0vw,-20vh) rotate(0deg)";
     await wait(1000);
     // pipetteAcid.style.display="block"
@@ -352,7 +349,7 @@ butryometer.addEventListener("click", async () => {
     await wait(1000);
     butryometer.style.transform = "translate(-20.4vw,-25vh)";
     butryometerFilling.style.transform = "translate(-20.4vw,-5vh)";
-    updateInstruction(pipetteStep)
+    updateInstruction(pipetteStep);
     pipetteStep = 6;
     console.log("step no.", pipetteStep);
   } else if (pipetteStep === 8) {
@@ -369,8 +366,8 @@ butryometer.addEventListener("click", async () => {
     butryometer.style.transform = "translate(0vw,0vh) rotate(90deg)";
     butryometerFilling.style.transform =
       "translate(-1.76vw,16.5vh) rotate(90deg)";
-      updateInstruction(pipetteStep);
-      nextButton.style.display="block"
+    updateInstruction(pipetteStep);
+    nextButton.style.display = "block";
 
     pipetteStep = 9;
   } else if (pipetteStep === 11) {
@@ -387,7 +384,7 @@ butryometer.addEventListener("click", async () => {
     butryometer.style.transform = "translate(-23.2vw,-33vh)";
 
     butryometerFilling.style.transform = "translate(-23.2vw,-13vh)";
-    updateInstruction(pipetteStep)
+    updateInstruction(pipetteStep);
 
     pipetteStep = 12;
   } else if (pipetteStep === 19) {
@@ -403,11 +400,10 @@ butryometer.addEventListener("click", async () => {
     butryometer.style.transform = "translate(0vw,0vh) rotate(90deg)";
     butryometerFilling.style.transform =
       "translate(-1.76vw,16.5vh) rotate(90deg)";
-      updateInstruction(pipetteStep);
-      nextButton1.style.display="block";
+    updateInstruction(pipetteStep);
+    nextButton1.style.display = "block";
 
-
-      pipetteStep =20;
+    pipetteStep = 20;
 
     //step for taking the butryomter out of the centrifuge after the process.
   } else if (pipetteStep === 21) {
@@ -420,11 +416,10 @@ butryometer.addEventListener("click", async () => {
     await wait(1000);
     butryometer.style.transform = "translate(-20.4vw,-25vh)";
     butryometerFilling.style.transform = "translate(-20.4vw,-5vh)";
-    updateInstruction(pipetteStep)
-    pipetteStep =22;
-  } else if (pipetteStep === 24) 
-    {  
-       butryometer.style.transform = "translate(-20.5vw,-55vh)";
+    updateInstruction(pipetteStep);
+    pipetteStep = 22;
+  } else if (pipetteStep === 24) {
+    butryometer.style.transform = "translate(-20.5vw,-55vh)";
 
     butryometerFilling.style.transform = "translate(-20.5vw,-34.9vh)";
     await wait(1000);
@@ -436,20 +431,20 @@ butryometer.addEventListener("click", async () => {
     butryometer.style.transform = "translate(0vw,0vh) rotate(90deg)";
     butryometerFilling.style.transform =
       "translate(-1.76vw,16.5vh) rotate(90deg)";
-      updateInstruction(pipetteStep)
-      nextButton2.style.display="block";
-      pipetteStep =25;
+    updateInstruction(pipetteStep);
+    nextButton2.style.display = "block";
+    pipetteStep = 25;
 
     //this step is for taking the readings after the whole process is done
   }
 });
 butryometerSecond.addEventListener("click", async () => {
   if (pipetteStep === 12) {
-    butryometerSecond.style.zIndex=22;
+    butryometerSecond.style.zIndex = 22;
     butryometerSecond.style.transform = "translate(-1vw,-12vh) rotate(0deg)";
-    pipetteStep =13;
+    pipetteStep = 13;
   } else if (pipetteStep === 14) {
-    butryometerSecond.style.zIndex=19;
+    butryometerSecond.style.zIndex = 19;
     butryometerSecond.style.transform = "translate(-1vw,-50vh)";
     waterButryometer.style.transform = "translate(0vw,-38vh)";
     await wait(1000);
@@ -459,18 +454,15 @@ butryometerSecond.addEventListener("click", async () => {
     butryometerSecond.style.transform = "translate(-16.25vw,-30vh)";
     waterButryometer.style.transform = "translate(-15.25vw,-18vh)";
     updateInstruction(pipetteStep);
-     pipetteStep = 15;
+    pipetteStep = 15;
   }
- 
 });
 
 function toggleBathPower() {
   if (pipetteStep !== 6 && pipetteStep !== 22) return;
-  if (pipetteStep ===6){
-    
+  if (pipetteStep === 6) {
     pipetteStep = 7;
-  }
-  else if (pipetteStep ===22){
+  } else if (pipetteStep === 22) {
     updateInstruction(pipetteStep);
     pipetteStep = 23;
   }
@@ -489,7 +481,6 @@ function toggleBathPower() {
     instructionTxt.innerText = "Press 'ON/OFF' to turn on the water bath.";
     bathTimerRunning = false;
   }
-  
 }
 
 function startBathProcess() {
@@ -505,14 +496,13 @@ function startBathProcess() {
       bathSec = sec;
       runBathTimer();
       console.log("waterBAth running");
-      updateInstruction(pipetteStep)
-       pipetteStep = 8;
+      updateInstruction(pipetteStep);
+      pipetteStep = 8;
     } else {
       instructionTxt.innerText =
         "Please set temp to 65°C and timer to 05:00 to start.";
     }
   }
- 
 }
 
 function step9() {
@@ -536,7 +526,7 @@ function step9() {
     centrifugeControls.classList.remove("power-off");
     centrifugeControls.style.display = "block";
     nextButton.style.display = "none";
-    butryometerSecond.style.zIndex=22;
+    butryometerSecond.style.zIndex = 22;
 
     // ← inline style, highest priority
 
@@ -550,7 +540,7 @@ function step9() {
   pipetteStep = 10;
 }
 
-function  toggleCentrifugePower() {
+function toggleCentrifugePower() {
   if (pipetteStep !== 16) return;
   centrifugePowered = !centrifugePowered;
   console.log(centrifugePowered);
@@ -561,8 +551,8 @@ function  toggleCentrifugePower() {
     updateRPMDisplay();
     centrifugeMode = "";
   }
-  
-  updateInstruction(pipetteStep)
+
+  updateInstruction(pipetteStep);
   pipetteStep = 17;
 }
 
@@ -581,15 +571,15 @@ function step20() {
 
   /* 2️⃣  Show the water‑bath again */
 
-  startBathButton.style.display="none";
-  startSecondStartButton.style.display="block"
-  nextButton1.style.display="none"
-  butryometerSecond.style.display="none";
-  waterButryometer.style.display="none";
+  startBathButton.style.display = "none";
+  startSecondStartButton.style.display = "block";
+  nextButton1.style.display = "none";
+  butryometerSecond.style.display = "none";
+  waterButryometer.style.display = "none";
   waterBathBack.style.display = "block"; // base image
   waterBathFront.style.display = "block"; // lid/overlay
   waterBathControls.style.display = "block";
-   // control panel
+  // control panel
 
   /* 3️⃣  Reset bath UI + state */
   bathPanelState = 11; // off
@@ -629,40 +619,32 @@ function startBathProcessSecondCycle() {
         "Please set temp to 65°C and timer to 04:00 to start.";
     }
   }
-  
 }
 centrifugeLid.addEventListener("click", async () => {
-  if(pipetteStep ===10){
-  centrifugeLid.style.transform = "translate(0vw,-12vh)";
-  await wait(1000);
-  centrifugeLid.style.transform = "translate(24vw,-12vh)";
-  await wait(1000);
-  centrifugeLid.style.transform = "translate(24vw,26vh)";
-  pipetteStep = 11;
-  }
-  else if (pipetteStep === 15){
-    
-  centrifugeLid.style.transform = "translate(24vw,-12vh)";
-  await wait(1000);
-  centrifugeLid.style.transform = "translate(0vw,-12vh)";
-  await wait(1000);
-  centrifugeLid.style.transform = "translate(0vw,0vh)";
-  updateInstruction(pipetteStep);
-
-  pipetteStep =16;
-
-
-
-  }
-  else if (pipetteStep ===18){
+  if (pipetteStep === 10) {
     centrifugeLid.style.transform = "translate(0vw,-12vh)";
-  await wait(1000);
-  centrifugeLid.style.transform = "translate(24vw,-12vh)";
-  await wait(1000);
-  centrifugeLid.style.transform = "translate(24vw,26vh)";
-  updateInstruction(pipetteStep);
-  pipetteStep = 19;
+    await wait(1000);
+    centrifugeLid.style.transform = "translate(24vw,-12vh)";
+    await wait(1000);
+    centrifugeLid.style.transform = "translate(24vw,26vh)";
+    pipetteStep = 11;
+  } else if (pipetteStep === 15) {
+    centrifugeLid.style.transform = "translate(24vw,-12vh)";
+    await wait(1000);
+    centrifugeLid.style.transform = "translate(0vw,-12vh)";
+    await wait(1000);
+    centrifugeLid.style.transform = "translate(0vw,0vh)";
+    updateInstruction(pipetteStep);
 
+    pipetteStep = 16;
+  } else if (pipetteStep === 18) {
+    centrifugeLid.style.transform = "translate(0vw,-12vh)";
+    await wait(1000);
+    centrifugeLid.style.transform = "translate(24vw,-12vh)";
+    await wait(1000);
+    centrifugeLid.style.transform = "translate(24vw,26vh)";
+    updateInstruction(pipetteStep);
+    pipetteStep = 19;
   }
 });
 
@@ -749,6 +731,9 @@ function setCentrifugeMinuteMode() {
   centrifugeMode = "mm";
 }
 
+function setCentrifugeRPMMode() {
+  centrifugeMode = "rpm";
+}
 function setCentrifugeSecondMode() {
   centrifugeMode = "ss";
 }
@@ -764,9 +749,8 @@ function increaseCentrifugeTime() {
     centrifugeMin = Math.min(centrifugeMin + 1, 59);
   } else if (centrifugeMode === "ss") {
     centrifugeSec = Math.min(centrifugeSec + 1, 59);
-  } else {
+  } else if (centrifugeMode === "rpm") {
     changeRPM(+100);
-    return;
   }
   updateCentrifugeTimerDisplay();
 }
@@ -777,7 +761,7 @@ function decreaseCentrifugeTime() {
     centrifugeMin = Math.max(centrifugeMin - 1, 0);
   } else if (centrifugeMode === "ss") {
     centrifugeSec = Math.max(centrifugeSec - 1, 0);
-  } else {
+  } else if (centrifugeMode === "rpm") {
     changeRPM(-100);
     return;
   }
@@ -813,7 +797,6 @@ function runCentrifugeTimer() {
   setTimeout(runCentrifugeTimer, 10);
 }
 
-
 function startCentrifuge() {
   const rpm = parseInt(rpmDisplay.innerText, 10);
   const min = parseInt(centrifugeMinEl.innerText, 10);
@@ -826,11 +809,12 @@ function startCentrifuge() {
 
   if (pipetteStep === 17) {
     if (rpm === 1100 && min === 3 && sec === 0) {
-      instructionTxt.innerText = "Centrifuge running for 3 minutes at 1100 RPM...";
+      instructionTxt.innerText =
+        "Centrifuge running for 3 minutes at 1100 RPM...";
       centrifugeTimerOn = true;
       centrifugePowered = true;
       runCentrifugeTimer();
-      updateInstruction(pipetteStep)
+      updateInstruction(pipetteStep);
       pipetteStep = 18;
       console.log("✅ Centrifuge started");
       // centrifugeStartBtn.disabled = true;
@@ -843,14 +827,14 @@ function startCentrifuge() {
   }
 }
 
-function step25(){
-  if(pipetteStep != 25) return;
-  nextButton2.style.display="none";
-  waterMeasuringCylinder.style.display="none";
-  milkSolution.style.display="none";
-  
-  thermometer.style.display="block";
-  milk50Solution.style.display="block";
+function step25() {
+  if (pipetteStep != 25) return;
+  nextButton2.style.display = "none";
+  waterMeasuringCylinder.style.display = "none";
+  milkSolution.style.display = "none";
+
+  thermometer.style.display = "block";
+  milk50Solution.style.display = "block";
   // milkMoreThan50Solution.display="block"
   waterBathControls.style.display = "none";
   waterBathBack.style.display = "none";
@@ -858,119 +842,131 @@ function step25(){
   butryometer.style.display = "none";
   butryometerFilling.style.display = "none";
   pipette.style.display = "none";
-  lactometer.style.display="block";
+  lactometer.style.display = "block";
 
   pipetteStep = 26;
-
-
 }
 
 function updateInstruction(step) {
   const instruction = document.getElementById("instructionText");
 
   switch (step) {
-
     // case 1:
     //   instruction.innerText="Click on the pipette to draw 10ml of sulphuric acid and dispense it into the butyrometer.."
     //   break;
 
     case 1:
-      instruction.innerText="Click on the Butryometer to bring it in for dispensing the sulphuric acid" 
-      break;
-      
-     case 2:
-      instruction.innerText="Click on the pipette to draw 10.75 ml of milk and dispense it into the butyrometer " 
+      instruction.innerText =
+        "Click on the Butryometer to bring it in for dispensing the sulphuric acid";
       break;
 
-     case 3:
-      instruction.innerText="Click on the pipette again to draw 1ml of amyl alcohol and dispense it into the butryometer";
-      break; 
-    case 4:
-      instruction.innerText = "Now click on the butyrometer to place it into the water bath";
+    case 2:
+      instruction.innerText =
+        "Click on the pipette to draw 10.75 ml of milk and dispense it into the butyrometer ";
       break;
-      // Call related step function
+
+    case 3:
+      instruction.innerText =
+        "Click on the pipette again to draw 1ml of amyl alcohol and dispense it into the butryometer";
+      break;
+    case 4:
+      instruction.innerText =
+        "Now click on the butyrometer to place it into the water bath";
+      break;
+    // Call related step function
     case 5:
-      instruction.innerText="Click 'ON/OFF' to power the water bath. Use 'TEMP', 'MM', and 'SS' to select temperature, minutes, and seconds. Adjust the values using the '+' and '−' buttons.Set the temperature 65C and time 5 minuetes and 00 seconds. Then start the waterBath "
-     break;
- 
-     case 7:
-      instruction.innerText="Now click on the butryometer to take it out of the waterbath"
+      instruction.innerText =
+        "Click 'ON/OFF' to power the water bath. Use 'TEMP', 'MM', and 'SS' to select temperature, minutes, and seconds. Adjust the values using the '+' and '−' buttons.Set the temperature 65C and time 5 minuetes and 00 seconds. Then start the waterBath ";
+      break;
+
+    case 7:
+      instruction.innerText =
+        "Now click on the butryometer to take it out of the waterbath";
       break;
 
     case 8:
-      instruction.innerText="Click on the next button below to proceed further";
+      instruction.innerText =
+        "Click on the next button below to proceed further";
       break;
-      case 9:
-        instruction.innerText="Click on centrifuge lid to open it "
-        break;
-
-        case 10:
-          instruction.innerText="Now click on the butryometer to place it inside the centrifuge ";
-          break;
-
-          case 11:
-          instruction.innerText="Click on the second butryometer to bring it on for dispensing the water ";
-          break;
-          case 12:
-          instruction.innerText="Now click on the pipette to draw 21.75ml water and dispense it into the butryometer to balance out the first one ";
-          break;
-
-          case 13:
-          instruction.innerText="Click on the other butryometer to place it inside the centrifuge to balance out the rotating plate ";
-          break;
-
-          case 14:
-            instruction.innerText="Now click on the centrifuge lid again to close the centrifuge"
-            break;
-
-          case 15:
-            instruction.innerText="Click 'ON/OFF' to power the water bath. Use  'MM', and 'SS' to select minutes, and seconds. Adjust the values using the '+' and '−' buttons of rpm and time.Set the rpm 1100 and 4 minutes and 00 seconds.  Then start the centrifuge "
-     break;
-     
-     case 16:
-      instruction.innerText ="Click on the centrifuge start button to start the centrifuge"
+    case 9:
+      instruction.innerText = "Click on centrifuge lid to open it ";
       break;
-      case 17:
-            instruction.innerText="Now click on the centrifuge lid again to open the centrifuge"
-            break;
 
-      case 18:
-        instruction.innerText="click on the butryometer to take out the butryometer out of the centrifuge machine"   
-        break;
-        
-        case 19:
-          instruction.innerText="Click on the next button to proceed further";
-          break;
+    case 10:
+      instruction.innerText =
+        "Now click on the butryometer to place it inside the centrifuge ";
+      break;
 
-          
+    case 11:
+      instruction.innerText =
+        "Click on the second butryometer to bring it on for dispensing the water ";
+      break;
+    case 12:
+      instruction.innerText =
+        "Now click on the pipette to draw 21.75ml water and dispense it into the butryometer to balance out the first one ";
+      break;
+
+    case 13:
+      instruction.innerText =
+        "Click on the other butryometer to place it inside the centrifuge to balance out the rotating plate ";
+      break;
+
+    case 14:
+      instruction.innerText =
+        "Now click on the centrifuge lid again to close the centrifuge";
+      break;
+
+    case 15:
+      instruction.innerText =
+        "Click 'ON/OFF' to power the water bath. Use  'MM', and 'SS' to select minutes, and seconds. Adjust the values using the '+' and '−' buttons of rpm and time.Set the rpm 1100 and 4 minutes and 00 seconds.  Then start the centrifuge ";
+      break;
+
+    case 16:
+      instruction.innerText =
+        "Click on the centrifuge start button to start the centrifuge";
+      break;
+    case 17:
+      instruction.innerText =
+        "Now click on the centrifuge lid again to open the centrifuge";
+      break;
+
+    case 18:
+      instruction.innerText =
+        "click on the butryometer to take out the butryometer out of the centrifuge machine";
+      break;
+
+    case 19:
+      instruction.innerText = "Click on the next button to proceed further";
+      break;
 
     case 20:
-      instruction.innerText = "Again click on the Butryometer to place it inside the waterBath .";
+      instruction.innerText =
+        "Again click on the Butryometer to place it inside the waterBath .";
 
-    break;
-
+      break;
 
     case 21:
-      instruction.innerText="Click 'ON/OFF' to power the water bath. Use 'TEMP', 'MM', and 'SS' to select temperature, minutes, and seconds.Set the temperatue 65C and time 3 minutes. Adjust the values using the '+' and '−' buttons. Then start the waterBath"
+      instruction.innerText =
+        "Click 'ON/OFF' to power the water bath. Use 'TEMP', 'MM', and 'SS' to select temperature, minutes, and seconds.Set the temperatue 65C and time 3 minutes. Adjust the values using the '+' and '−' buttons. Then start the waterBath";
       break;
-      
-   case 22:
-    instruction.innerText="Now take it out of the waterBath and measure fat layer";
-    break;
+
+    case 22:
+      instruction.innerText =
+        "Now take it out of the waterBath and measure fat layer";
+      break;
 
     case 23:
-      instruction.innerText="Now click on the next button to proceed further"
+      instruction.innerText = "Now click on the next button to proceed further";
     case 25:
-      instruction.innerText = "Final step: observe the separation and note the fat layer.";
+      instruction.innerText =
+        "Final step: observe the separation and note the fat layer.";
       break;
-      
 
     default:
-      instruction.innerText = "Follow the procedure step-by-step using the 'Next' buttons.";
+      instruction.innerText =
+        "Follow the procedure step-by-step using the 'Next' buttons.";
   }
 }
-
-
 
 // function toggleCentrifugePower() {
 //   centrifugePowered = !centrifugePowered;
@@ -1017,5 +1013,4 @@ window.startBathProcessSecondCycle = startBathProcessSecondCycle;
 
 window.step9 = step9;
 window.step20 = step20;
-window.step25 =step25;
-
+window.step25 = step25;
