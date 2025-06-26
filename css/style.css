@@ -1,0 +1,792 @@
+/* Reset and Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #caf7e6;
+}
+
+/* Container Setup */
+#container {
+  display: flex;
+  width: 90vw;
+  height: 85vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Panel */
+#left {
+  position: relative;
+  width: 65%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* Background Table */
+#workingTable {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+/* Right Placeholder */
+#right {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 100%;
+  background-color: #03131b;
+  overflow: hidden;
+}
+
+/* Lab Items */
+#measuring-cylinder-w,
+#milk-solution-w,
+#sulphuric-acid-w,
+#water-bath-w,
+#water-bath-w1,
+#pipette-w,
+#butryometer-w,
+#butryometer1-w,
+#centrifuge-w,
+#centrifuge-g-w,
+#pipetteMilk,
+#pipetteAcid,
+#pipetteAmyl,
+#sulphuric-acid-solution,
+#amyl-alcohol-w,
+#amyl-alcohol-solution,
+#pouringSolution,
+#pouringSolution1,
+#pouringMilkSolution,
+#butryometer-filling,
+#waterButryometer,
+#waterMeasuringCylinder,#pipetteWater-w,
+#lactometer-w,
+#thermometer-w1,
+#thermometer-w,#milk50-solution-w,#milk50-solution-w1{
+  position: absolute;
+  transition: transform 1s ease-in-out;
+}
+#lactometer-w{
+  width: 1vw;
+  left: 41vw;
+  bottom: 8vh;
+  z-index: 1;
+  display: none;
+  transform: rotate(90deg);
+}
+#thermometer-w{
+  width: 2vw;
+  left: 41vw;
+  bottom: 5vh;
+  z-index: 2;
+  display: none;
+  
+  transform: rotate(90deg);
+}
+
+#thermometer-w1{
+  
+  width: 0.15vw;
+  height:10px;
+  left: 50.55vw;
+  bottom: 22vh;
+  z-index: 3;
+  display: none;
+  
+
+
+}
+/* Individual Image Styling (use percentages or vw for scaling) */
+#measuring-cylinder-w {
+  width: 6.2vw;
+  left: 47.5vw;
+  bottom: 7vh;
+  z-index: 12;
+}
+#milk-solution-w {
+  width: 3.4vw;
+  left: 48.9vw;
+  bottom: 8vh;
+  /* height: 29vh; */
+  z-index: 1;
+  /* display: none; */
+}
+#milk50-solution-w {
+  width: 3.4vw;
+  left: 48.9vw;
+  bottom: 8vh;
+  /* height: 29vh; */
+  z-index: 1;
+  display: none;
+}
+#milk50-solution-w1 {
+  width: 3.4vw;
+  left: 48.9vw;
+  bottom: 8vh;
+  /* height: 29vh; */
+  z-index: 1;
+  display: none;
+}
+#waterMeasuringCylinder {
+  width: 3.4vw;
+  left: 48.9vw;
+  bottom: 8vh;
+  /* height: 29vh; */
+  z-index: 2;
+  display: none;
+  /* display: none; */
+}
+#amyl-alcohol-w{
+  width: 6vw;
+  left: 34vw;
+  bottom: 18vh;
+  z-index: 12;
+}
+#amyl-alcohol-solution{
+  width: 6vw;
+  left: 34vw;
+  bottom: 18vh;
+  z-index: 9
+}
+#sulphuric-acid-w {
+  width: 6vw;
+  left: 41vw;
+  bottom: 10vh;
+  z-index: 12;
+}
+#sulphuric-acid-solution {
+  width: 6vw;
+  left: 41vw;
+  bottom: 10vh;
+  z-index: 9;
+}
+
+
+#pipette-w {
+  width: 3vw;
+  left: 7vw;
+  top: 65%;
+  z-index: 10;
+  transform: rotate(90deg);
+}
+
+#butryometer-w {
+
+  width: 1.5vw;
+  left: 31.35vw;
+  bottom: 0%;
+  z-index: 3;
+  transform: rotate(90deg);
+}
+#butryometer1-w {
+
+  width: 1.5vw;
+  left: 32.35vw;
+  display: none;
+  bottom: 5%;
+  z-index: 3;
+  transform: rotate(90deg);
+}
+
+#pouringSolution{
+
+  width:0.4%;
+  display: none;
+  transition: transform 2s ease-in-out;
+  left: 32vw;
+  bottom: 24.5%;
+  z-index: 0;
+  
+}
+#pouringSolution1{
+
+  width:0.4%;
+  /* display: none; */
+  transition: transform 2s ease-in-out;
+  left: 32vw;
+  bottom: 21%;
+  display: none;
+  z-index: 0;
+  
+}
+#pouringMilkSolution{
+
+  width:0.4%;
+  display: none;
+  transition: transform 2s ease-in-out;
+  left: 32vw;
+  bottom: 24.5%;
+  z-index: 0;
+  
+}
+#butryometer-filling{
+
+ 
+  width: 1.2vw;
+  left: 31.5vw;
+  bottom: 23.5%;
+  z-index: 1;
+  display: none;
+  
+  
+}
+#waterButryometer{
+
+ 
+  width: 1.2vw;
+  left: 31.5vw;
+  bottom: 19.1%;
+  z-index: 1;
+  display: none;
+  
+  
+}
+#centrifuge {
+  position: relative;
+  width: 22vw; /* Set if needed */
+  height: auto;
+  display: none; /* Adjust according to your design */
+}
+
+/* Common styles */
+#centrifuge-w, #centrifuge1-w, #centrifuge-g-w {
+  position: absolute;
+  width: 22vw;
+  left: 2vw;
+}
+
+/* Base centrifuge */
+#centrifuge-w {
+  bottom: 15vh;
+  z-index: 1;
+}
+
+/* Overlay centrifuge1 — same position, higher z-index */
+#centrifuge1-w {
+  bottom: 14.69vh;
+  z-index: 20;
+}
+
+/* Lid */
+#centrifuge-g-w {
+  bottom: 41vh;
+  z-index: 21;
+  left: 1.8vw;
+ 
+  will-change: transform;
+  /* display:none; */
+}
+
+#pipetteMilk {
+  /* display: none; */
+  width: 0.7vw;
+  left:50.2vw;
+  bottom: 31.3vh;
+  z-index: 0;
+  transition: transform 1s ease-in-out;
+}
+#pipetteWater-w{
+ 
+  /* display: none; */
+  width: 0.7vw;
+  left:50.21vw;
+  bottom: 31.3vh;
+  z-index: 0;
+  display: none;
+  transition: transform 1s ease-in-out;
+
+}
+#pipetteAmyl{
+  /* display: none; */
+  width: 2vw;
+  left:36vw;
+  bottom: 26vh;
+  z-index:100;
+  display: none;
+  transition: transform 1s ease-in-out;
+
+}
+#pipetteAcid {
+  width: 0.7vw;
+  display: none;
+  left: 43.55vw;
+  top: 76.5%;
+  z-index: 9;
+  height: 4vh;
+  transition: transform 1s ease-in-out;
+  transform-origin: top;
+  
+}
+/* ──────────────────────────────────────────────
+   1. WATER‑BATH WRAPPER  (bottom now 5 vh)
+────────────────────────────────────────────── */
+/* 1. WRAPPER POSITION FIX (use relative for layering children) */
+/* Wrapper to place the bath wherever you want */
+.waterBath-wrapper {
+  position: absolute;
+  left: 2.2vw;
+  bottom: 3.5vh;
+  width: 18.5vw;
+  aspect-ratio: 1 / 1;
+  
+}
+
+/* Inner bath is relatively positioned so all children follow */
+#waterBath {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* display:none; */
+}
+
+/* Images fill the bath */
+#waterBath img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+#water-bath-w  { z-index: 1; }
+#water-bath-w1 { z-index: 5;
+top: 1.8vh !important;
+left: 0.37vw !important; 
+}
+
+/* Controls overlay the image */
+#waterBathControls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Temperature and time display */
+#displayRow {
+  position: absolute;
+  top: 24%;
+  left: 23%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4vw;
+  pointer-events: auto;
+}
+
+#temperature, #time {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2vw;
+}
+
+#displayRow span {
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+#temp, #celcius { color: red; }
+#min, #dots, #sec { color: rgb(100, 175, 19); }
+
+/* Buttons container */
+#buttonWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+/* Button styling */
+#buttonWrapper button {
+  position: absolute;
+  font-size: 0.9vw;
+  padding: 0.4vw 0.9vw;
+  border: none;
+  border-radius: 0.4vw;
+  background: #105574;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+#buttonWrapper button:hover {
+  background: #0b3f59;
+}
+
+/* Custom positions — you can adjust as needed */
+#onoff    { top: 12%; left: 62%; }
+
+#setTemp  { top: 23%; left: 45%; }
+#start    { top: 23%; left: 75%; }
+#begin    { top: 23%; left: 75%; display: none; }
+#mm       { top: 40%; left: 8%; }
+#ss       { top: 40%; left: 30%; }
+#increase { top: 35%; left: 50%; }
+#decrease { top: 35%; left: 80%; }
+
+/* Responsive tweaks for mobile */
+@media (max-width: 768px) {
+  .waterBath-wrapper {
+    width: 60vw;
+    bottom: 20vh;
+  }
+
+  #displayRow span {
+    font-size: 3vw;
+  }
+
+  #buttonWrapper button {
+    font-size: 2.5vw;
+    padding: 1.2vw 2vw;
+  }
+
+  /* Optional: adjust positions on mobile */
+  #onoff    { top: 55%; left: 15%; }
+  #setTemp  { top: 63%; left: 10%; }
+  #start    { top: 73%; left: 30%; }
+  #begin    { top: 73%; left: 3%; }
+  #mm       { top: 83%; left: 12%; }
+  #ss       { top: 83%; left: 35%; }
+  #increase { top: 60%; left: 45%; }
+  #decrease { top: 67%; left: 45%; }
+}
+
+/* Instruction text */
+#ins {
+  position: absolute;
+  bottom: 2vh;
+  left: 2vw;
+  font-size: 0.95vw;
+  color: #333;
+}
+.power-off{
+  display: none;
+}
+#CentrifugeControls{
+  position: absolute;
+  /* display: none; */
+}
+#increaseRpm{
+
+  position: absolute;
+  background-color: orange;
+  bottom: 32vh;
+  left: 18vw;
+  z-index: 999;
+  transform: rotate(-8deg);transform-origin: center bottom;
+
+}
+#decreaseRpm{
+
+  position: absolute;
+  background-color: orange;
+  bottom: 28vh;
+  left: 18vw;
+  z-index: 999;
+  transform: rotate(-8deg);
+transform-origin: center bottom;
+}
+#power{
+
+  position: absolute;
+  background-color: orange;
+  bottom: 38vh;
+  left: 18vw;
+  z-index: 999;
+  transform: rotate(-8deg);transform-origin: center bottom;
+
+}
+#startCentrifuge{
+  position: absolute;
+  background-color: orange;
+  bottom: 38vh;
+  left: 30vw;
+  z-index: 999;
+  transform: rotate(-8deg);transform-origin: center bottom;
+
+}
+#rpm{
+
+  position: absolute;
+  transform-origin: center bottom;
+  /* background-color: blue; */
+  color: orange;
+  bottom: 35.5vh;
+  left: 14vw;
+  z-index: 9999;
+  transform: rotate(-9deg);
+  /* display: none; */
+  font-weight: bold;
+
+}
+#centrifugeMin {
+  left: 14.5vw;
+}
+
+#centrifugeSec {
+  left: 17vw; /* was 16vw */
+}
+
+#centrifugeTimeWrapper {
+  position: absolute;
+  bottom: 33vh;
+  left: 14vw;
+  display: flex;
+  gap: 0.1vw;
+  transform: rotate(-8deg);
+  color: orange;
+  font-weight: bold;
+  z-index: 9999;
+}
+#centrifugeMM{
+    position: absolute;
+  background-color: orange;
+  bottom: 25vh;
+  left: 14vw;
+  z-index: 999;
+  transform: rotate(-8deg);
+  transform-origin: center bottom;
+
+
+}
+#centrifugeSS{
+    position: absolute;
+  background-color: orange;
+  bottom: 20vh;
+  left: 14vw;
+  transform: rotate(-8deg);
+  z-index: 999;
+  transform-origin: center bottom;
+
+}
+
+#testTube{
+ position: absolute;
+ background-color: red;
+  left: 25vw;
+  bottom: 15vh;
+  width: 15vw;
+  height: 2.5vh;
+  z-index: 20;
+  display: none;
+  /* aspect-ratio: 1 / 1; */
+
+  /* top: ; */
+  /* left: ; */
+}
+#testTube img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+#testTubeBack{
+  position: absolute;
+  z-index: 55;
+  
+  /*
+   width: 5vw; */
+
+}
+
+#testTubeFront{
+  position: absolute;
+  z-index: 10;
+  /* position: relative; */
+  bottom: 15vh;
+  /* width: 2vw; */
+
+}
+/* Shaking Animation */
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  10%, 30%, 50%, 70% { transform: translate(-5px, 0) rotate(-60deg); }
+  20%, 40%, 60%, 80% { transform: translate(5px, 0) rotate(60deg); }
+  90% { transform: translate(-2px, 0) rotate(0); }
+}
+.shake {
+  animation: shake 1s infinite;
+}
+
+/* Responsiveness: Adjust sizes on smaller devices */
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+    width: 95vw;
+    height: auto;
+  }
+
+  #left, #right {
+    width: 100%;
+  }
+
+  #workingTable {
+    height: auto;
+  }
+
+  button {
+    font-size: 2.5vw;
+    padding: 1vw;
+  }
+
+  #temp, #celcius, #min, #dots, #sec {
+    font-size: 3vw;
+  }
+
+  #ins {
+    font-size: 2vw;
+  }
+}
+/* @keyframes pouring{
+  0%   { height: 4vh; }
+  10%  { height: 3.5vh; }
+  20%  { height: 3vh; }
+  50%  { height: 2.5vh; }
+  70%  { height: 2vh; }
+  90%  { height: 1vh; }
+  100% { height: 0vh; }
+} */
+
+.pouring {
+  animation: pouring 2s linear forwards;
+}
+.filling{
+  animation: filling 2s linear forwards;
+
+}
+.filling1{
+  animation: filling1 2s linear forwards;
+
+}
+.pouring1{
+  animation: pouring1 2s linear forwards;
+}
+.filling2{
+  animation: filling2 2s linear forwards;
+}
+.thermometerFilling {
+  animation: thermometerFillign 2s linear forwards;
+}
+@keyframes pouring {
+  0% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(100% 0% 0% 0%);
+  }
+}
+@keyframes filling{
+   0% {
+    clip-path: inset(100% 0% 0% 0%);
+   }
+   100%{
+    clip-path: inset(73% 0% 0% 0%);
+
+   }
+
+}
+.reducing{
+  animation: reducing 2s linear forwards;
+}
+@keyframes reducing{
+  0% {
+    clip-path: inset(0% 0% 0% 0%);
+   }
+   100%{
+    clip-path: inset(18% 0% 0% 0%);
+
+   }
+}
+@keyframes pouring1 {
+  0% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  70%{
+    clip-path: inset(0% 0% 0% 0%);;
+  }
+  100% {
+    clip-path: inset(100% 0% 0% 0%);
+  }
+}@keyframes filling{
+   0% {
+    clip-path: inset(100% 0% 0% 0%);
+   }
+   100%{
+    clip-path: inset(73% 0% 0% 0%);
+
+   }
+  }
+  @keyframes filling1{
+   0% {
+    clip-path: inset(73% 0% 0% 0%);
+   }
+   100%{
+    clip-path: inset(7% 0% 0% 0%);
+
+   }
+  }
+   @keyframes filling2{
+   0% {
+    clip-path: inset(7% 0% 0% 0%);
+   }
+   100%{
+    clip-path: inset(0% 0% 0% 0%);
+
+   }
+  }
+
+
+  .reducing1{
+    animation: reducing1 2s linear forwards;
+  }
+  @keyframes reducing1{
+  0% {
+    clip-path: inset(0% 0% 0% 0%);
+   }
+   100%{
+    clip-path: inset(28% 0% 0% 0%);
+
+   }
+}
+
+@keyframes thermometreFilling{
+  0% {
+    clip-path: inset(100% 0% 0% 0%);
+   }
+   100%{
+    clip-path: inset(30% 0% 0% 0%);
+
+   }
+
+
+}
+
+.instructionBox{
+  height: 30%;
+  background-color: rgb(3, 66, 122);
+
+}
+
+#nextRender{
+  display: none;
+}
+#nextRender1{
+  display: none;
+}
+#nextRender2{
+  display: none;
+}

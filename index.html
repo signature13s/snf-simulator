@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>muku L</title>
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- Main container -->
+  <div id="container">
+
+    <!-- ◄ LEFT: Lab workspace with all graphics and the water‑bath panel -->
+    <div id="left">
+      <!-- Background bench -->
+      <img id="workingTable" src="./Images/Bg_Image.png" alt="Work bench background" />
+
+      <!-- Lab glassware / instruments -->
+      <div id="measuring-cylinder">
+        <img id="measuring-cylinder-w" src="./Images/measuring-cylinder.png" alt="Measuring cylinder" />
+
+      </div>
+
+      <div id="amyl-alcohol">
+        <img id="amyl-alcohol-w" src="./Images/Amyl-Alcohol.png" alt="amyl-alcohol" />
+        <img id="amyl-alcohol-solution" src="./Images/sulphuric-acid-solution.png" alt="amyl-alcohol" />
+      </div>
+
+      <div id="milk-solution">
+        <img id="milk-solution-w" src="./Images/milk-solution.png" alt="Milk solution" />
+        <img src="./Images/milk50mlSolution.png" alt="" id="milk50-solution-w" />
+        <img src="./Images/milk50mlSolution.png" alt="" id="milk50-solution-w1" />
+      </div>
+      <div id="water">
+        <img src="./Images/measuring-cylinder-solution.png" alt="water" id="waterMeasuringCylinder" />
+      </div>
+
+      <div id="sulphuric-acid">
+        <img id="sulphuric-acid-w" src="./Images/sulphuric-acid.png" alt="Sulphuric acid bottle" />
+        <img id="sulphuric-acid-solution" src="./Images/sulphuric-acid-solution.png" alt="Sulphuric Acid Solution" />
+      </div>
+
+
+      <div class="waterBath-wrapper">
+        <div id="waterBath">
+          <img id="water-bath-w" src="./Images/waterbath.png" alt="Water bath base" />
+          <img id="water-bath-w1" src="./Images/waterbath1.png" alt="Water bath lid" />
+
+          <div id="waterBathControls">
+            <!-- Temperature/time -->
+            <div id="displayRow">
+              <div id="temperature">
+                <span id="temp">00</span>
+                <span id="celcius">°C</span>
+              </div>
+              <div id="time">
+                <span id="min">00</span>
+                <span id="dots">:</span>
+                <span id="sec">00</span>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div id="buttonWrapper">
+              <button id="onoff" onclick="toggleBathPower()">Power</button>
+              <button id="setTemp" onclick="toggleTempSetting()">TEMP</button>
+              <button id="start" onclick="startBathProcess()">Start</button>
+              <button id="begin" onclick="startBathProcessSecondCycle()">Begin</button>
+              <button id="mm" onclick="toggleMinuteSetting()">MM</button>
+              <button id="ss" onclick="toggleSecondSetting()">SS</button>
+              <button id="increase" onclick="increaseValue()">+</button>
+              <button id="decrease" onclick="decreaseValue()">-</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="testTube">
+        <img src="./Images/test-tube-stand-back.png" alt="Test Tube stand" id="testTubeBack">
+        <img src="./Images/test-tube-stand-front.png" alt="Test Tube stand" id="testTubeFront">
+      </div>
+      <div id="pipette">
+        <img id="pipette-w" src="./Images/pippete.png" alt="Pipette" />
+      </div>
+
+      <div id="butryometer">
+        <img id="butryometer-w" src="./Images/1x/Asset 2.png" alt="Butyrometer" />
+        <img id="pouringMilkSolution" src="./Images/pouringMilk.png" alt="" />
+        <img id="pouringSolution" src="./Images/pouring.png" alt="" />
+
+        <img src="./Images/butryometer-filling.png" alt="" id="butryometer-filling" />
+      </div>
+      <div id="butryometer1">
+        <img id="butryometer1-w" src="./Images/1x/Asset 2.png" alt="Butryometer" />
+        <img id="pouringSolution1" src="./Images/pouring.png" alt="" />
+        <img src="./Images/waterButryometer.png" alt="" id="waterButryometer">
+      </div>
+
+      <div id="centrifuge">
+        <img id="centrifuge-w" src="./Images/centrifuge.png" alt="Centrifuge body" />
+        <img id="centrifuge1-w" src="./Images/centrifuge1.png" alt="Centrifuge body" />
+        <img id="centrifuge-g-w" src="./Images/centrifuge-g.png" alt="Centrifuge lid" />
+
+      </div>
+      <div id="centrifugeControls" class="power-off">
+        <!-- RPM Display -->
+        <span id="rpm">0000</span>
+
+        <!-- Timer Display -->
+        <div id="centrifugeTimeWrapper">
+          <span id="centrifugeMin">00</span>:<span id="centrifugeSec">00</span>
+        </div>
+
+        <!-- Mode Select Buttons -->
+        <button id="centrifugeMM" onclick="setCentrifugeMinuteMode()">MM</button>
+        <button id="centrifugeSS" onclick="setCentrifugeSecondMode()">SS</button>
+
+        <!-- Increase/Decrease for RPM or Timer -->
+        <button id="increaseRpm" onclick="increaseCentrifugeTime()">Increase</button>
+        <button id="decreaseRpm" onclick="decreaseCentrifugeTime()">Decrease</button>
+        <button id="startCentrifuge" onclick="startCentrifuge()">Start</button>
+        <!-- Power Button -->
+        <button id="power" onclick="toggleCentrifugePower()">Power</button>
+      </div>
+
+
+      <div id="pipetteSolutionMilk">
+        <img id="pipetteMilk" src="./Images/pipetteMilk.png" alt="Pipette – milk sample" />
+      </div>
+      <div id="pipetteWater">
+        <img src="./Images/pippeteWater.png" alt="Pipette Water sample" id="pipetteWater-w" />
+      </div>
+
+      <div id="pipetteSolutionAcid">
+        <img id="pipetteAcid" src="./Images/pipette-acid.png" alt="Pipette – acid sample" />
+      </div>
+
+
+      <div id="pipetteSolutionAmyl">
+        <img src="./Images/pipette-amyl.png" alt="amyl-alcohol" id="pipetteAmyl" />
+      </div>
+      <div id="lactometer">
+        <img src="./Images/lactometerFinal.png" alt="lactometer" id="lactometer-w" />
+      </div>
+      <div id="thermometer">
+        <img src="./Images/thermometer.png" alt="thermometer" id="thermometer-w" />
+        <img src="./Images/thermometer1.png" alt="" id="thermometer-w1" />
+      </div>
+
+
+    </div>
+    <div id="right">
+      <div id="steps" style="height: 70%; overflow-y: auto; padding: 1rem;">
+        <!-- Dynamic step content will go here -->
+      </div>
+
+      <div class="instructionBox" style="height: 30%; background: #f9f9f9; border-top: 2px solid #ccc; padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem; color: #444;">🧪 Instructions:</h3>
+        <p id="instructionText" style="font-size: 1.1rem; color: #333;">Click on the pipette to draw 10ml of sulphuric acid and dispense it into the butyrometer..</p>
+        <button onclick="step9()" id="nextRender">Next</button>
+        <button onclick="step20()" id="nextRender1">Next</button>
+        <button onclick="step25()" id="nextRender2">Next</button>
+      </div>
+    </div>
+
+    <!-- Pipette liquids: two distinct containers so IDs are unique -->
+
+    <!-- ▣ WATER‑BATH CONTROL PANEL (inside the workspace) -->
+    <!-- Temperature Display -->
+
+
+    <!-- Instruction text -->
+    <p id="ins">Press 'ON/OFF' to turn on the water bath.</p>
+  </div>
+  </div>
+
+  <!-- Combined water‑bath + animation script -->
+  <script src="./script/project.js"></script>
+</body>
+
+</html>
