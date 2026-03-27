@@ -940,7 +940,7 @@ function updateInstruction(step) {
 
     case 15:
       instruction.innerText =
-        "Click 'ON/OFF' to power the water bath. Use  'MM', and 'SS' to select minutes, and seconds. Adjust the values using the '+' and '−' buttons of rpm and time.Set the rpm 1100 and 4 minutes and 00 seconds.  Then start the centrifuge ";
+        "Click 'ON/OFF' to power the water bath. Use  'MM', and 'SS' to select minutes, and seconds. Adjust the values using the '+' and '−' buttons of rpm and time.Set the rpm 1100 and 3 minutes and 00 seconds.  Then start the centrifuge ";
       break;
 
     case 16:
@@ -1075,15 +1075,20 @@ function calculateSNF(clr, fat) {
 
 function showRecordLRButton() {
   const right = document.getElementById("right");
-  right.style.display = "flex"; // ← add this
-  right.style.backgroundColor = "#fffbe6"; // ← add this
-  right.style.width = "35%"; // ← add this
-  right.style.position = "absolute"; // ← add this
-  right.style.right = "0"; // ← add this
-  right.style.height = "100%"; // ← add this
-  right.style.zIndex = "200"; // ← add this
-  right.style.overflowY = "auto"; // ← add this
-  right.style.borderLeft = "2px solid #f0d988"; // ← add this
+  right.style.display = "flex";
+  right.style.backgroundColor = "#fffbe6";
+  right.style.width = "420px";
+  right.style.position = "fixed";
+  right.style.top = "50%";
+  right.style.left = "50%";
+  right.style.transform = "translate(-50%, -50%)";
+  right.style.height = "auto";
+  right.style.maxHeight = "90vh";
+  right.style.zIndex = "200";
+  right.style.overflowY = "auto";
+  right.style.borderRadius = "12px";
+  right.style.boxShadow = "0 8px 32px rgba(0,0,0,0.25)";
+  right.style.border = "2px solid #f0d988";
   const stepsDiv = document.getElementById("steps");
   stepsDiv.innerHTML = `
     <div style="text-align:center; padding:1rem; font-family:'Segoe UI',sans-serif;">
@@ -1187,3 +1192,106 @@ window.recordCLR = function (clr) {
 };
 
 window.showRecordLRButton = showRecordLRButton;
+
+window.recordLR = function () {
+  const stepsDiv = document.getElementById("steps");
+
+  stepsDiv.innerHTML = `
+    <div style="padding:0.8rem; font-family:'Segoe UI',sans-serif;">
+      <h3 style="color:#d84315; margin-bottom:0.4rem;">📊 Step 11 – Enter Readings</h3>
+
+      <div style="margin-bottom:0.6rem; font-size:0.9rem;">
+        <label style="display:block; margin-bottom:0.2rem; color:#555;">
+          <strong>Lactometer Reading (LR):</strong>
+        </label>
+        <input id="inputLR" type="number" value="28" style="
+          width:100%; padding:0.4rem 0.6rem; border:1px solid #fb8c00;
+          border-radius:4px; font-size:1rem;
+        "/>
+      </div>
+
+      <div style="margin-bottom:0.6rem; font-size:0.9rem;">
+        <label style="display:block; margin-bottom:0.2rem; color:#555;">
+          <strong>Milk Temperature (°C):</strong>
+        </label>
+        <input id="inputTemp" type="number" value="30" style="
+          width:100%; padding:0.4rem 0.6rem; border:1px solid #fb8c00;
+          border-radius:4px; font-size:1rem;
+        "/>
+      </div>
+
+      <div style="margin-bottom:0.8rem; font-size:0.9rem;">
+        <label style="display:block; margin-bottom:0.2rem; color:#555;">
+          <strong>Fat % (F) from Butyrometer:</strong>
+        </label>
+        <input id="inputFat" type="number" value="3.5" step="0.1" style="
+          width:100%; padding:0.4rem 0.6rem; border:1px solid #fb8c00;
+          border-radius:4px; font-size:1rem;
+        "/>
+      </div>
+
+      <button onclick="computeSNF()" style="
+        padding:0.5rem 1.4rem; background:#e17055; color:#fff;
+        border:none; border-radius:6px; font-size:1rem; cursor:pointer;
+        box-shadow:0 2px 6px rgba(0,0,0,0.15); width:100%;
+      ">✅ Calculate CLR &amp; SNF</button>
+    </div>
+  `;
+
+  document.getElementById("instructionText").innerText =
+    "Step 11: Enter the Lactometer Reading, Temperature and Fat %. Then click Calculate.";
+};
+
+window.computeSNF = function () {
+  const lr = parseFloat(document.getElementById("inputLR").value);
+  const temp = parseFloat(document.getElementById("inputTemp").value);
+  const fat = parseFloat(document.getElementById("inputFat").value);
+
+  if (isNaN(lr) || isNaN(temp) || isNaN(fat)) {
+    alert("Please enter valid numbers for all fields.");
+    return;
+  }
+
+  const clr = (lr + 0.2 * (temp - 15.5)).toFixed(2);
+  const snf = (parseFloat(clr) / 4 + 0.25 * fat + 0.6).toFixed(2);
+
+  const stepsDiv = document.getElementById("steps");
+  stepsDiv.innerHTML = `
+    <div style="padding:0.8rem; font-family:'Segoe UI',sans-serif;">
+      <h3 style="color:#d84315; margin-bottom:0.6rem;">🧪 Final Results — Experiment Complete</h3>
+
+      <div style="background:#fff3e0; border-left:4px solid #fb8c00;
+        padding:0.6rem 1rem; border-radius:4px; margin-bottom:0.5rem; font-size:0.88rem;">
+        <strong>LR:</strong> ${lr}
+        &nbsp;|&nbsp; <strong>Temp:</strong> ${temp}°C
+        &nbsp;|&nbsp; <strong>Fat (F):</strong> ${fat}%
+      </div>
+
+      <div style="background:#e8f5e9; border-left:4px solid #43a047;
+        padding:0.6rem 1rem; border-radius:4px; margin-bottom:0.5rem; font-size:0.88rem;">
+        <strong>CLR Calculation:</strong><br/>
+        CLR = LR + 0.2 × (T − 15.5)<br/>
+        CLR = ${lr} + 0.2 × (${temp} − 15.5) = <strong>${clr}</strong>
+      </div>
+
+      <div style="background:#fce4ec; border-left:4px solid #e91e63;
+        padding:0.8rem 1rem; border-radius:4px; font-size:0.92rem;">
+        <strong>SNF Calculation:</strong><br/><br/>
+        SNF (%) = CLR / 4 + 0.25 × F + 0.6<br/>
+        SNF (%) = ${clr} / 4 + 0.25 × ${fat} + 0.6<br/><br/>
+        <span style="font-size:1.2rem; color:#c62828;">
+          <strong>SNF = ${snf}%</strong>
+        </span>
+      </div>
+
+      <div style="margin-top:0.8rem; background:#f3e5f5; border-left:4px solid #8e24aa;
+        padding:0.6rem 1rem; border-radius:4px; font-size:0.88rem; color:#4a148c;">
+        ✅ <strong>Experiment Completed Successfully!</strong><br/>
+        The SNF content of the given milk sample is <strong>${snf}%</strong>.
+      </div>
+    </div>
+  `;
+
+  document.getElementById("instructionText").innerText =
+    `✅ Experiment Complete! SNF content of milk = ${snf}%. Determination of SNF in milk is done successfully.`;
+};
